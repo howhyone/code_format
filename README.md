@@ -5,7 +5,7 @@
 ## 安装
 
 ```bash
-codex plugin marketplace add howhyone/codeFormat
+codex plugin marketplace add howhyone/code_format
 codex plugin add codeFormat@codeFormat-marketplace
 ```
 

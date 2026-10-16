@@ -3,7 +3,7 @@
   "version": "0.2.1",
   "description": "约束生成代码遵守项目已有格式规范。",
   "author": { "name": "howhyone" },
-  "repository": "https://github.com/howhyone/codeFormat.git",
+  "repository": "https://github.com/howhyone/code_format.git",
   "license": "MIT",
   "skills": "./skills/",
   "hooks": "./hooks/claude-codex-hooks.json",

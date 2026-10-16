@@ -3,7 +3,7 @@
   "interface": { "displayName": "Code Format Marketplace" },
   "plugins": [{
     "name": "codeFormat",
-    "source": { "source": "url", "url": "https://github.com/howhyone/codeFormat.git", "ref": "main" },
+    "source": { "source": "url", "url": "https://github.com/howhyone/code_format.git", "ref": "main" },
     "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
     "category": "Developer tools"
   }]
