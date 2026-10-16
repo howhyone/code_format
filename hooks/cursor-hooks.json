@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [{
+      "command": "node -e \"process.env.CODE_FORMAT_EVENT='SessionStart'; require(require('path').join(process.env.CLAUDE_PLUGIN_ROOT || process.env.PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\"",
+      "timeout": 5
+    }],
+    "beforeSubmitPrompt": [{
+      "command": "node -e \"process.env.CODE_FORMAT_EVENT='UserPromptSubmit'; require(require('path').join(process.env.CLAUDE_PLUGIN_ROOT || process.env.PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\"",
+      "timeout": 5
+    }]
+  }
+}

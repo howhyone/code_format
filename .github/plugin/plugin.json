@@ -1,0 +1,9 @@
+{
+  "name": "codeFormat",
+  "version": "0.2.1",
+  "description": "约束生成代码遵守项目格式规范。",
+  "author": { "name": "howhyone" },
+  "commands": "commands/",
+  "skills": "skills/",
+  "hooks": "hooks/copilot-hooks.json"
+}

@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "SessionStart": [{
+      "matcher": "startup|resume|clear|compact",
+      "hooks": [{
+        "type": "command",
+        "command": "node -e \"process.env.CODE_FORMAT_EVENT='SessionStart'; require(require('path').join(process.env.CLAUDE_PLUGIN_ROOT || process.env.PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\"",
+        "timeout": 5,
+        "statusMessage": "Loading code format rules..."
+      }]
+    }],
+    "UserPromptSubmit": [{
+      "hooks": [{
+        "type": "command",
+        "command": "node -e \"process.env.CODE_FORMAT_EVENT='UserPromptSubmit'; require(require('path').join(process.env.CLAUDE_PLUGIN_ROOT || process.env.PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\"",
+        "timeout": 5
+      }]
+    }],
+    "SubagentStart": [{
+      "hooks": [{
+        "type": "command",
+        "command": "node -e \"process.env.CODE_FORMAT_EVENT='SubagentStart'; require(require('path').join(process.env.CLAUDE_PLUGIN_ROOT || process.env.PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\"",
+        "timeout": 5
+      }]
+    }]
+  }
+}

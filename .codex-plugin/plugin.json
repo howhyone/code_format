@@ -1,0 +1,18 @@
+{
+  "name": "codeFormat",
+  "version": "0.2.1",
+  "description": "约束生成代码遵守项目已有格式规范。",
+  "author": { "name": "howhyone" },
+  "repository": "https://github.com/howhyone/codeFormat.git",
+  "license": "MIT",
+  "skills": "./skills/",
+  "hooks": "./hooks/claude-codex-hooks.json",
+  "interface": {
+    "displayName": "Code Format",
+    "shortDescription": "约束生成代码格式",
+    "longDescription": "在生成代码前读取项目格式配置，并把格式约束传递给主 Agent 和子 Agent。",
+    "developerName": "howhyone",
+    "category": "Developer tools",
+    "capabilities": ["Instructions", "Lifecycle hooks"]
+  }
+}
