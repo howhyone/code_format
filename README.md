@@ -1,6 +1,6 @@
 # codeFormat
 
-`codeFormat` 是一个在生成代码时加载项目格式规范的跨平台 Agent Plugin。
+`codeFormat` 是一个面向 Codex 的代码格式约束插件，也兼容 Claude、Cursor、GitHub Copilot 和 Qoder。
 
 ## 安装
 
@@ -11,9 +11,9 @@ codex plugin add codeFormat@codeFormat-marketplace
 
 ## 使用
 
-安装后，直接描述代码需求即可。插件会在会话、用户请求和子 Agent 启动时加载项目格式配置，并约束新生成的代码。
+安装后，在 Codex 中直接描述代码需求即可。插件会在会话、用户请求和子 Agent 启动时加载项目格式配置，并约束新生成的代码。
 
-也可以主动调用 `/code-format`，提醒当前请求遵守项目格式。
+也可以在 Codex 中主动调用 `/code-format`，提醒当前请求遵守项目格式。
 
 插件只约束本次生成内容，不会扫描、格式化或修改未被用户要求处理的已有文件。
 
@@ -23,7 +23,7 @@ codex plugin add codeFormat@codeFormat-marketplace
 
 插件只读取项目格式配置，不执行 formatter，不修改文件，也不上传代码。Hook 失败时会自动放行主会话。
 
-跨平台入口：Codex / Claude、Cursor、GitHub Copilot 和 Qoder。可设置 `CODE_FORMAT_OFF=1` 跳过当前 Hook 注入。
+Codex 是主要支持平台；同时提供 Claude、Cursor、GitHub Copilot 和 Qoder 入口。可设置 `CODE_FORMAT_OFF=1` 跳过当前 Hook 注入。
 
 ## 许可证
 

@@ -3,14 +3,14 @@
   "hooks": {
     "sessionStart": [{
       "type": "command",
-      "bash": "node -e \"process.env.CODE_FORMAT_EVENT='SessionStart'; require(require('path').join(process.env.PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\"",
-      "powershell": "node -e \"process.env.CODE_FORMAT_EVENT='SessionStart'; require(require('path').join(process.env.PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\"",
+      "bash": "node -e \"process.env.CODE_FORMAT_PLATFORM='copilot'; process.env.CODE_FORMAT_EVENT='SessionStart'; require(require('path').join(process.env.PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\"",
+      "powershell": "node -e \"process.env.CODE_FORMAT_PLATFORM='copilot'; process.env.CODE_FORMAT_EVENT='SessionStart'; require(require('path').join(process.env.PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\"",
       "timeoutSec": 5
     }],
     "userPromptSubmitted": [{
       "type": "command",
-      "bash": "node -e \"process.env.CODE_FORMAT_EVENT='UserPromptSubmit'; require(require('path').join(process.env.PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\"",
-      "powershell": "node -e \"process.env.CODE_FORMAT_EVENT='UserPromptSubmit'; require(require('path').join(process.env.PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\"",
+      "bash": "node -e \"process.env.CODE_FORMAT_PLATFORM='copilot'; process.env.CODE_FORMAT_EVENT='UserPromptSubmit'; require(require('path').join(process.env.PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\"",
+      "powershell": "node -e \"process.env.CODE_FORMAT_PLATFORM='copilot'; process.env.CODE_FORMAT_EVENT='UserPromptSubmit'; require(require('path').join(process.env.PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\"",
       "timeoutSec": 5
     }]
   }

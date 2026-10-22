@@ -5,6 +5,7 @@
   "author": { "name": "howhyone" },
   "repository": "https://github.com/howhyone/code_format.git",
   "license": "MIT",
+  "commands": "./commands/",
   "skills": "./skills/",
   "hooks": "./hooks/claude-codex-hooks.json",
   "interface": {

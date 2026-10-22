@@ -3,14 +3,14 @@
     "UserPromptSubmit": [{
       "hooks": [{
         "type": "command",
-        "command": "node -e \"process.env.CODE_FORMAT_EVENT='UserPromptSubmit'; require(require('path').join(process.env.QODER_PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\""
+        "command": "node -e \"process.env.CODE_FORMAT_PLATFORM='qoder'; process.env.CODE_FORMAT_EVENT='UserPromptSubmit'; require(require('path').join(process.env.QODER_PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\""
       }]
     }],
     "PreToolUse": [{
       "matcher": "task|Task",
       "hooks": [{
         "type": "command",
-        "command": "node -e \"process.env.CODE_FORMAT_EVENT='SubagentStart'; require(require('path').join(process.env.QODER_PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\""
+        "command": "node -e \"process.env.CODE_FORMAT_PLATFORM='qoder'; process.env.CODE_FORMAT_EVENT='SubagentStart'; require(require('path').join(process.env.QODER_PLUGIN_ROOT, 'hooks/code-format-instructions.js'))\""
       }]
     }]
   }

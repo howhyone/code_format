@@ -8,7 +8,7 @@ const CONFIG_NAMES = [
   '.editorconfig', '.prettierrc', '.prettierrc.json', '.prettierrc.js',
   'prettier.config.js', 'eslint.config.js', '.eslintrc', '.eslintrc.json',
   '.swiftformat', 'swiftformat.json', 'pyproject.toml', 'ruff.toml',
-  'biome.json', 'gofmt.toml',
+  'biome.json', 'gofmt.toml', '.clang-format', 'rustfmt.toml', '.rustfmt.toml',
 ];
 
 function projectRoot() {
@@ -40,17 +40,18 @@ function context() {
     'CODE FORMAT ACTIVE',
     '生成或修改代码前，先读取项目格式配置和相邻代码，严格遵守项目已有格式。',
     configLine,
+    '适用于任何语言：遵守该语言和框架的常规格式，保持语句、表达式和调用的可读换行，不要为了压缩代码把多个独立操作拼到同一行。',
     '保持缩进、换行、括号、命名、导入顺序和文件组织一致。只约束本次生成内容，不主动扫描或修改其他已有文件。',
   ].join('\n');
 }
 
-function writeOutput(event, text) {
+function writeOutput(event, text, platform = process.env.CODE_FORMAT_PLATFORM || 'legacy') {
   if (!text) return;
-  if (process.env.COPILOT_PLUGIN_DATA || process.env.PLUGIN_ROOT?.includes('.vscode')) {
+  if (platform === 'copilot') {
     process.stdout.write(JSON.stringify({ additionalContext: text }));
-  } else if (process.env.PLUGIN_DATA || process.env.QODER_SESSION_ID) {
+  } else if (platform === 'qoder') {
     process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName: event, additionalContext: text } }));
-  } else if (process.env.CURSOR_VERSION) {
+  } else if (platform === 'cursor') {
     process.stdout.write(JSON.stringify({ additional_context: text, ...(event === 'UserPromptSubmit' ? { continue: true } : {}) }));
   } else if (event === 'SubagentStart') {
     process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName: event, additionalContext: text } }));
